@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="customBtnDark">#3A4655</color>
     <color name="customecolor">#425062</color>
+    <color name="customOperationColor">#404D5E</color>
 </resources>

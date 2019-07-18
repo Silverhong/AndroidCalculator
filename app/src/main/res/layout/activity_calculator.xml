@@ -6,65 +6,116 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="10sp"
-    android:paddingBottom="10sp"
+    android:paddingBottom="0sp"
     android:background="#3A4655"
     tools:context=".Calculator">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        />
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/calculateArea"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingRight="2dp"
+            android:gravity="right|center|center_vertical"
+            android:textSize="40sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-light"
+            />
+        <TextView
+            android:id="@+id/calculateResult"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingRight="20dp"
+            android:gravity="right"
+            android:textSize="70sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-light"
+            />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5sp"
+        android:layout_weight="1"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100sp"
+            android:layout_weight="1"
             android:orientation="horizontal"
-            >
+            android:layout_height="0dp">
             <Button
+                android:onClick="btnNumberClick"
+                android:id="@+id/clear"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
                 android:text="C"
                 android:textColor="#D15D4E"
                 android:textSize="40sp"
                 android:layout_marginEnd="3dp"
                 android:fontFamily="sans-serif-light"
-                android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+                android:background="@drawable/customclear"/>
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:layout_marginEnd="3dp"
-                android:textSize="40sp"
-                android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:layout_marginEnd="3dp">
+                <ImageButton
+                    android:id="@+id/PlusMinus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_plus_minus"
+                    android:background="@drawable/customoperationcolor"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:textSize="40sp"
-                android:layout_marginEnd="3dp"
-                android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:layout_marginEnd="3dp">
+                <ImageButton
+                    android:onClick="ibtnOperationClick"
+                    android:id="@+id/modular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_percentage"
+                    android:background="@drawable/customoperationcolor"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:textSize="40sp"
-
-                android:background="@drawable/customcolor"/>
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                >
+                <ImageButton
+                    android:onClick="ibtnOperationClick"
+                    android:id="@+id/divided"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/customoperationcolor"
+                    android:src="@drawable/ic_divide" />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100sp"
+            android:layout_weight="1"
+            android:layout_height="0dp"
             android:orientation="horizontal"
             android:layout_marginTop="3dp"
             >
             <Button
+                android:id="@+id/one"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/customcolor"
                 android:fontFamily="sans-serif-light"
@@ -73,9 +124,11 @@
                 android:textColor="#FFFFFF"
                 android:textSize="40sp" />
             <Button
+                android:id="@+id/two"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
                 android:text="2"
@@ -83,36 +136,44 @@
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:id="@+id/three"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
                 android:text="3"
                 android:layout_marginEnd="3dp"
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:textSize="40sp"
-                android:textColor="#FFFFFF"
-                android:text=""
-                android:fontFamily="sans-serif-light"
-
-                android:background="@drawable/customcolor"/>
+                android:layout_height="match_parent"
+                android:padding="0dp">
+                <ImageButton
+                    android:onClick="ibtnOperationClick"
+                    android:id="@+id/multiply"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_multiply"
+                    android:background="@drawable/customoperationcolor"/>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100sp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_marginTop="3dp"
             >
             <Button
+                android:id="@+id/four"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="3dp"
                 android:textColor="#FFFFFF"
                 android:text="4"
@@ -120,9 +181,11 @@
                 android:textSize="40sp"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:id="@+id/five"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="3dp"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
@@ -130,36 +193,44 @@
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:id="@+id/six"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
                 android:text="6"
                 android:layout_marginEnd="3dp"
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:textSize="40sp"
-                android:textColor="#FFFFFF"
-                android:text=""
-                android:fontFamily="sans-serif-light"
-
-                android:background="@drawable/customcolor"/>
+                android:layout_height="match_parent"
+                android:padding="0dp">
+                <ImageButton
+                    android:onClick="ibtnOperationClick"
+                    android:id="@+id/minus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_minus_math"
+                    android:background="@drawable/customoperationcolor"/>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100sp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_marginTop="3dp"
             >
             <Button
+                android:id="@+id/seven"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="3dp"
                 android:textColor="#FFFFFF"
                 android:text="7"
@@ -167,9 +238,11 @@
                 android:textSize="40sp"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:id="@+id/eight"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
                 android:layout_marginEnd="3dp"
@@ -177,36 +250,44 @@
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:id="@+id/nine"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
                 android:text="9"
                 android:layout_marginEnd="3dp"
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:textSize="40sp"
-                android:textColor="#FFFFFF"
-                android:text=""
-                android:fontFamily="sans-serif-light"
-                android:background="@drawable/customcolor"/>
+                android:layout_height="match_parent"
+                android:padding="0dp">
+                <ImageButton
+                    android:id="@+id/plus"
+                    android:onClick="ibtnOperationClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_plus_math"
+                    android:background="@drawable/customoperationcolor"/>
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100sp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_marginTop="3dp"
             >
             <Button
+                android:id="@+id/dot"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-
+                android:layout_height="match_parent"
+                android:onClick="btnNumberClick"
                 android:textColor="#FFFFFF"
                 android:text="."
                 android:fontFamily="sans-serif-light"
@@ -214,9 +295,11 @@
                 android:layout_marginEnd="3dp"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:id="@+id/zero"
+                android:onClick="btnNumberClick"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="3dp"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
@@ -224,25 +307,30 @@
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
             <Button
+                android:onClick="btnNumberClick"
+                android:id="@+id/backspace"
                 android:layout_width="0sp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
+                android:layout_height="match_parent"
                 android:textSize="40sp"
                 android:textColor="#FFFFFF"
                 android:layout_marginEnd="3dp"
                 android:text="&lt;"
                 android:fontFamily="sans-serif-light"
                 android:background="@drawable/customcolor"/>
-            <Button
-                android:layout_width="0sp"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="100sp"
-                android:textSize="40sp"
-                android:textColor="#FFFFFF"
-                android:text=""
-                android:fontFamily="sans-serif-light"
-
-                android:background="@drawable/customcolor"/>
+                android:layout_height="match_parent"
+                android:padding="0dp">
+                <ImageButton
+                    android:onClick="EqualClick"
+                    android:id="@+id/equal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_equal_sign"
+                    android:background="@drawable/customequal"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
